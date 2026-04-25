@@ -1,0 +1,241 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* Premium Light Luxury Renovation Theme - NobleNest */
+:root {
+  /* Core Light Theme */
+  --background: #FFFFFF;
+  --background-secondary: #F8F8F8;
+  --background-tertiary: #EFEFEF;
+  --foreground: #1A1A1A;
+  --foreground-muted: #666666;
+  
+  /* Champagne Gold Accent */
+  --accent: #D6B56D;
+  --accent-hover: #C9A85C;
+  --accent-foreground: #FFFFFF;
+  
+  /* Clean shadows instead of glassmorphism */
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.15);
+  
+  /* Gold subtle glow for light backgrounds */
+  --gold-accent: rgba(214, 181, 109, 0.15);
+  --gold-border: rgba(214, 181, 109, 0.3);
+  
+  /* Semantic mappings */
+  --card: #FFFFFF;
+  --card-foreground: #1A1A1A;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A1A;
+  --primary: #D6B56D;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F8F8F8;
+  --secondary-foreground: #1A1A1A;
+  --muted: #EFEFEF;
+  --muted-foreground: #666666;
+  --destructive: #FF6B6B;
+  --destructive-foreground: #FFFFFF;
+  --border: #E5E5E5;
+  --input: #F8F8F8;
+  --ring: #D6B56D;
+  
+  /* Charts */
+  --chart-1: #D6B56D;
+  --chart-2: #F0D58A;
+  --chart-3: #999999;
+  --chart-4: #1A1A1A;
+  --chart-5: #E5E5E5;
+  
+  --radius: 0.625rem;
+  
+  /* Sidebar */
+  --sidebar: #F8F8F8;
+  --sidebar-foreground: #1A1A1A;
+  --sidebar-primary: #D6B56D;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #EFEFEF;
+  --sidebar-accent-foreground: #1A1A1A;
+  --sidebar-border: #E5E5E5;
+  --sidebar-ring: #D6B56D;
+}
+
+@theme inline {
+  --font-sans: 'Inter', 'Inter Fallback', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
+  
+  /* Colors */
+  --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
+  --color-background-tertiary: var(--background-tertiary);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  
+  /* Shadows and accents */
+  --color-card-shadow: var(--card-shadow);
+  --color-card-shadow-hover: var(--card-shadow-hover);
+  --color-gold-accent: var(--gold-accent);
+  --color-gold-border: var(--gold-border);
+  
+  /* Radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Sidebar */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background: #FFFFFF;
+  }
+  
+  /* Light background everywhere */
+  html {
+    background: #FFFFFF;
+    scroll-behavior: smooth;
+  }
+  
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Custom scrollbar for light theme */
+@layer base {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F8F8F8;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D6B56D;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #C9A85C;
+  }
+}
+
+/* Clean card utility - light theme */
+@layer components {
+  .clean-card {
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .clean-card:hover {
+    border-color: #D6B56D;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Gold accent card */
+  .gold-accent-card {
+    background: #FFFFFF;
+    border: 2px solid #D6B56D;
+    box-shadow: 0 4px 12px rgba(214, 181, 109, 0.15);
+  }
+  
+  /* Gradient text */
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #D6B56D 0%, #C9A85C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Section backgrounds */
+  .section-light {
+    background: #FFFFFF;
+  }
+  
+  .section-light-alt {
+    background: #F8F8F8;
+  }
+  
+  /* Subtle accent line */
+  .accent-line {
+    background: linear-gradient(90deg, transparent, #D6B56D, transparent);
+    height: 1px;
+  }
+}
+
+/* Selection color - light theme */
+::selection {
+  background: rgba(214, 181, 109, 0.3);
+  color: #1A1A1A;
+}
+
+/* Smooth scroll behavior */
+@supports (scroll-behavior: smooth) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Subtle animations */
+@keyframes gentle-float-up {
+  0%, 100% { transform: translateY(0px); opacity: 0.4; }
+  50% { transform: translateY(-2px); opacity: 0.6; }
+}
+
+@keyframes subtle-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes subtle-slide-up {
+  from { transform: translateY(8px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
